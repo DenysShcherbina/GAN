@@ -95,7 +95,7 @@ generator_optimizer = keras.optimizers.Adam(1e-4)
 discriminator_optimizer = keras.optimizers.Adam(1e-4)
 
 
-# Fit models
+# Model training logic
 @tf.function
 def train_step(images):
     with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
@@ -141,7 +141,7 @@ def train(dataset, epochs):
     return history
 
 
-# Start fit
+# Start training models
 EPOCHS = 100
 history = train(train_dataset, EPOCHS)
 
